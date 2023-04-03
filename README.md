@@ -7,7 +7,7 @@ Choose a self-explaining name for your project.
 In development
 
 ## Project members
-Antonio Tällberg Ilestad (Antta839)
+Antonio Tällberg Ilestad (Antta839)                                                                                                                                   
 Viktor Larsson (vikla566)
 
 ## Description
