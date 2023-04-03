@@ -13,8 +13,9 @@ Viktor Larsson (vikla566)
 ## Description
 Beskrivning av projektet
 
-%En hemsida som man kan se spel på, man kan se beskrivning och kostnad på spelen. Man ska kunna logga in på sidan och spara de spel man vill i en lista. Man ska kunna dela listan %
 %En sida som man kan skapa ett konto, logga in, spara ner sina val, se ett utbud. %
+
+%Hemsidan går ut på att man ska kunna logga in och skapa ett användarkonto, sedan ska man se en lista över spel som man kan klicka på för att se en beskrivning av spelet och även kostnaden, kanske tillomed en rating på spelet. Man ska kunna skapa listor, som man kan lägga till spel på och sedan kunna dela listorna. Exmeplevis exportera som en txt fil. %
 
 ## Midcourse screencast
 Länk till screencast
