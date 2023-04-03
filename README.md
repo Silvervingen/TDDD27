@@ -13,6 +13,8 @@ Viktor Larsson (vikla566)
 ## Description
 Beskrivning av projektet
 
+%En sida som man kan skapa ett konto, logga in, spara ner sina val, se ett utbud. %
+
 ## Midcourse screencast
 Länk till screencast
 
