@@ -1,7 +1,7 @@
 # TDDD27
 
 ## Name
-Gamelist
+GameTrackr
 
 ## Project status
 In development
