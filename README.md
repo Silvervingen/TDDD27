@@ -11,11 +11,13 @@ In development
 * Viktor Larsson (vikla566)
 
 ## Description
-Beskrivning av projektet
 
-%En sida som man kan skapa ett konto, logga in, spara ner sina val, se ett utbud. %
+Syftet med webbsidan är att erbjuda en plattform för användare att hålla koll på de spel de gillar. Detta kan vara användbart för spelare som vill ha en lista över de spel de har spelat eller de spel de vill spela i framtiden. Genom att skapa ett konto och lägga till spel på sin lista kan användare hålla reda på vilka spel de har spelat, vilka spel de har gillat och vilka spel de vill spela härnäst.
 
-%Hemsidan går ut på att man ska kunna logga in och skapa ett användarkonto, sedan ska man se en lista över spel som man kan klicka på för att se en beskrivning av spelet och även kostnaden, kanske tillomed en rating på spelet. Man ska kunna skapa listor, som man kan lägga till spel på och sedan kunna dela listorna. Exmeplevis exportera som en txt fil. %
+Webbsidan kommer att ha en användarvänlig gränssnitt som är lätt att navigera. Användare kommer att kunna söka efter spel efter titel, genre eller plattform och lägga till spel på sin lista över spårade spel. De kommer också att kunna skapa anpassade listor för att organisera sina spårade spel på ett sätt som gör det meningsfullt för dem. Till exempel kan de skapa en lista över alla spel de vill spela i framtiden, en lista över deras favoritspel eller en lista över spel de har avslutat.
+
+Utöver att spåra spel kommer användare att kunna se detaljerad information om varje spel, inklusive en beskrivning och pris. Denna information kommer att hämtas från RAWG Video Games Database API , vilket säkerställer att informationen är korrekt och uppdaterad.
+
 
 ## Midcourse screencast
 Länk till screencast
