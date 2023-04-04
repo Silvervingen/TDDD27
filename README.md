@@ -12,11 +12,11 @@ In development
 
 ## Description
 
-Syftet med webbsidan är att erbjuda en plattform för användare att hålla koll på de spel de gillar. Detta kan vara användbart för spelare som vill ha en lista över de spel de har spelat eller de spel de vill spela i framtiden. Genom att skapa ett konto och lägga till spel på sin lista kan användare hålla reda på vilka spel de har spelat, vilka spel de har gillat och vilka spel de vill spela härnäst.
+The purpose of the website is to offer a platform for users to keep track of the games they like. This can be useful for players who want a list of the games they have played or the games they want to play in the future. By creating an account and adding games to their list, users can keep track of which games they have played, which games they have liked, and which games they want to play next.
 
-Webbsidan kommer att ha en användarvänlig gränssnitt som är lätt att navigera. Användare kommer att kunna söka efter spel efter titel, genre eller plattform och lägga till spel på sin lista över spårade spel. De kommer också att kunna skapa anpassade listor för att organisera sina spårade spel på ett sätt som gör det meningsfullt för dem. Till exempel kan de skapa en lista över alla spel de vill spela i framtiden, en lista över deras favoritspel eller en lista över spel de har avslutat.
+The website will have a user-friendly interface that is easy to navigate. Users will be able to search for games by title, genre, or platform and add games to their list of tracked games. They will also be able to create customized lists to organize their tracked games in a way that makes sense to them. For example, they can create a list of all the games they want to play in the future, a list of their favorite games, or a list of games they have completed.
 
-Utöver att spåra spel kommer användare att kunna se detaljerad information om varje spel, inklusive en beskrivning och pris. Denna information kommer att hämtas från RAWG Video Games Database API , vilket säkerställer att informationen är korrekt och uppdaterad.
+In addition to tracking games, users will be able to see detailed information about each game, including a description and price. This information will be retrieved from the RAWG Video Games Database API, which ensures that the information is accurate and up-to-date.
 
 
 ## Midcourse screencast
