@@ -25,6 +25,24 @@ Länk till screencast
 
 ## Functional specification
 Stegvis förklaring hur sidan fungerar och vilka steg och komponenter som finns.
+### User Accounts
+Users can create an account by providing their name, email address, and a password.
+Users can log in to their account using their email address and password.
+
+### Game Tracking
+Users can search for games by title, genre, or platform.
+Users can add games to their list of tracked games.
+Users can view a list of all the games they have added to their list.
+Users can view detailed information about each game, including a description and price.
+
+### Lists
+Users can create custom lists to organize their tracked games.
+Users can add games to their custom lists.
+Users can view a list of all their custom lists.
+
+### Navigation
+The webpage will have a simple and intuitive navigation menu to help users find the different features.
+Users can easily switch between the different sections of the webpage, such as their list of tracked games, custom lists, and game search.
 
 
 
