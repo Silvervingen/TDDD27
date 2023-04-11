@@ -1,11 +1,14 @@
 import React from 'react';
-
+import "bootstrap/dist/css/bootstrap.min.css"
 import './App.css';
 
 import Menu from "./menus/Menu";
 import Home from "./pages/Home";
-import Login from "./pages/Login";
 import Library from "./pages/Library";
+import Loginpage from "./javascript/Loginpage";
+import Auth from "./auth/Auth"
+import LOGNOW from "./javascript/LogNow"
+
 
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
@@ -14,7 +17,6 @@ import logo1 from './pictures/GameTrackr.png';
 
 function App() { 
   return (
-    
     <div className="App">
 
 <Router>
@@ -28,33 +30,21 @@ function App() {
             <Link to="/Library" className='nav'>Library</Link>
           </li>
           <li >
-            <Link to="/Login" className='nav'>Login</Link>
+            <Link to="/Auth" className='nav'>Login</Link>
           </li>
         </ul>
       </nav>
-
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Library" element={<Library />} />
-        <Route path="/Login" element={<Login />} />
-      </Routes>
+        <Route path="/Auth" element={<Auth />} />
+        </Routes>
     </Router>
 
     </div>
   );
 
-  const searchText = document.getElementById("search-text");
-  const searchForm = document.getElementById("search-form");
-  
-  searchText.addEventListener("click", function() {
-    searchForm.style.display = "block";
-  });
-  
-  document.addEventListener("click", function(event) {
-    if (!searchText.contains(event.target) && !searchForm.contains(event.target)) {
-      searchForm.style.display = "none";
-    }
-  });
 }
 
 export default App;

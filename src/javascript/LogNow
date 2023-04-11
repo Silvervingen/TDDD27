@@ -1,0 +1,58 @@
+import React,{useState} from "react";
+import {useLocalState} from ".javascript/useLocalState";
+
+const LogNow = () => {
+  const [username, setusername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const[Jwt, setJwt] = useLocalState("","jwt");
+
+function sendLoginRequest(){
+    const reqBody ={
+        username:username,
+        password:password,
+    };
+
+    fetch("api/auth/login",{
+        headers:{
+            "Content-Type": "application/json",
+        },method:"post",
+        body:JSON.stringify(reqBody),})
+        .then((response)=> 
+            {if(response.status == 200) 
+            return Promise.all([response.json(),response.headers]);
+                else
+            return Promise.reject("invalid login attempt")
+            })
+        .then(([body,headers])=>{setJwt(headers.get("authorization"));
+        window.location.href = "/Home";
+        }).catch((message)=> { alert(message);
+    });
+}
+
+return (
+
+    <>
+    <div>
+        <label htmlFor="username">Username</label>
+        <input type="text">
+            id="username" 
+            value={username} 
+            onChange={(event)=> setusername(event.target.value)}
+            </input>
+    </div>
+    <div>
+        <label htmlFor="password">Passwrod</label>
+        <input type="password">
+        id="password"value={password} 
+        onChange={(event)=> setPassword(event.target.value)}
+        </input>
+    </div>
+    <div>
+        <buttom id="submit" type="buttom" onClick={()=> sendLoginRequest()}></buttom>
+    </div>
+
+    </>
+
+);
+};
