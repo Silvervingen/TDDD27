@@ -8,6 +8,7 @@ import Library from "./pages/Library";
 import Loginpage from "./javascript/Loginpage";
 import Auth from "./auth/Auth"
 import LOGNOW from "./javascript/LogNow"
+import GameInfo from './pages/GameInfo';
 
 
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
@@ -39,6 +40,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Library" element={<Library />} />
         <Route path="/Auth" element={<Auth />} />
+        <Route path="/GameInfo/:id" element={<GameInfo />} />
         </Routes>
     </Router>
 

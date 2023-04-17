@@ -1,0 +1,53 @@
+body {
+  background-color: aliceblue;
+  }
+
+.gameContainer{
+  width: 50%;
+  float: left;
+}
+
+.gameContainer2{
+  padding-top: 5%;
+  width: 50%;
+  float: left;
+}
+
+.gameSplashart {
+  padding-top: 10%;
+  width: 50%;
+  height: 50%;
+}
+
+h2 {
+  text-align: left;
+}
+
+p {
+  padding: 1% 1% 1% 1%;
+  text-align: left;
+}
+
+ul{
+  text-align: left;
+  padding-left: 5%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.InGameSS{
+  padding-bottom: 7%;
+  padding-bottom: 3%;
+  padding-left: 2%;
+  padding-right: 2%;
+  width: 50%;
+}
+
+.platformLogo{
+  width: 10%;
+  padding: 1% 1% 1% 1%;
+}
