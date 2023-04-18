@@ -20,7 +20,9 @@ import WiiU from '../pictures/WiiU.png'
 import Pc from '../pictures/PC.png'
 import Linux from '../pictures/Linux.png'
 import Apple from '../pictures/MacOS.png'
-
+import Android from '../pictures/Android.png'
+import iOS from '../pictures/iOS.png'
+import Dreamcast from '../pictures/Dreamcast.png'
 
 const apiKey = '0fbb76c073e64b8a919b4c0f0cf05a0b';
 
@@ -40,7 +42,10 @@ const platformImages = {
     "Game Boy Advance" : GBA,
     "Wii" : Wii,
     "Wii U" : WiiU,
-    
+    "Wii U" : WiiU,
+    "Android" : Android,
+    "iOS" : iOS,
+    "Dreamcast" : Dreamcast,
 
     // Add images for other platforms here
     // titta på att ta bort linux, mac, andra konoler som anses onödiga
@@ -71,7 +76,7 @@ function GameInfo() {
     <div class="Info-container">
         <div class="gameContainer">
         <img src={game.background_image} alt={game.name} class="gameSplashart" />
-        <h1>{game.name}</h1>
+        <h1 id="gameName">{game.name}</h1>
       <h4>Rating: {game.rating}</h4>
       <h4>Released: {game.released}</h4>
       

@@ -19,6 +19,10 @@ body {
   height: 50%;
 }
 
+#gameName {
+  color: black;
+}
+
 h2 {
   text-align: left;
 }
