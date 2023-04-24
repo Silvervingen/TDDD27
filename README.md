@@ -45,7 +45,7 @@ Länk till screencast
 ## Framework
 * React
 
-## Framework
+## API
 * Rawg
 
 
