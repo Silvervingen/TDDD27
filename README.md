@@ -42,5 +42,10 @@ Länk till screencast
 * Users can easily switch between the different sections of the webpage, such as their list of tracked games, custom lists, and game search.
 
 
+## Framework
+* React
+
+## Framework
+* Rawg
 
 
