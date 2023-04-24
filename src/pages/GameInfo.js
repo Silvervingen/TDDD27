@@ -99,6 +99,7 @@ function GameInfo() {
         </div>
    </div>
     
+	<button className = "Next" onClick={() => window.history.back()}>Go Back</button>
   
 </div>
 
