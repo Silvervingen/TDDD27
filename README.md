@@ -45,6 +45,9 @@ Länk till screencast
 ## Framework
 * React
 
+## Backend
+* Google cloud
+
 ## API
 * Rawg
 
