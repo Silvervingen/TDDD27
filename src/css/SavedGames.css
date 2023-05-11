@@ -1,0 +1,39 @@
+/* SavedGames.css */
+
+.game-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .game-box {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    max-width: 250px; /* Set a max width for each game box */
+  }
+  
+  .game-box img {
+    max-width: 5%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .game-box h2 {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .game-box p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
+  
+  .game-box li {
+    font-size: 0.8rem; /* Adjust the font size for the list items */
+    line-height: 1.2; /* Adjust the line height to match the font size */
+  }
+  
