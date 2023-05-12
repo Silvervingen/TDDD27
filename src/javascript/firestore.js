@@ -1,5 +1,9 @@
 import firebase from 'firebase/compat/app';
+import { getAuth } from "firebase/auth";
 import 'firebase/compat/firestore';
+
+function StartFirebase(){}
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyDt8mNCkPIEX250EWp43p53DVn1rkCP4vY",
@@ -16,5 +20,6 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 // Add a document to a collection
-export { db }; 
+const auth = getAuth();
 
+export { db, auth };

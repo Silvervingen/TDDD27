@@ -1,64 +1,62 @@
 import React, { useState, useEffect } from 'react';
-import { googleLogout, useGoogleLogin } from '@react-oauth/google';
-import axios from 'axios';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import { useNavigate } from 'react-router-dom';
+import "../css/Login.css"
 
 function Login() {
-  const [ user, setUser ] = useState([]);
-  const [ profile, setProfile ] = useState(null);
-
-  const login = useGoogleLogin({
-    onSuccess: (codeResponse) => setUser(codeResponse),
-    onError: (error) => console.log('Login Failed:', error)
-  });
-
-  const logOut = () => {
-    googleLogout();
-    setProfile(null);
-    localStorage.removeItem("profile");
-};
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const storedProfile = localStorage.getItem("profile");
-    if (storedProfile) {
-      setProfile(JSON.parse(storedProfile));
-    } else {
-      setProfile(null);
-    }
-  }, []);
+    // Check if a user is already signed in
+    const unsubscribe = firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        navigate('/');
+      }
+    });
 
-  useEffect(() => {
-    if (user && user.access_token) {
-      axios.get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`)
-        .then((res) => {
-          setProfile(res.data);
-          localStorage.setItem("profile", JSON.stringify(res.data));
-        })
-        .catch((err) => console.log(err));
-    } else {
-      setProfile(null);
-    }
-  }, [user]);
+    // Clean up the listener
+    return unsubscribe;
+  }, [navigate]);
+
+  const handleEmailChange = event => setEmail(event.target.value);
+  const handlePasswordChange = event => setPassword(event.target.value);
+
+  const handleSubmit = event => {
+    event.preventDefault();
+
+    // Set persistence to LOCAL
+    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+      .then(() => {
+        // Sign in the user
+        firebase.auth().signInWithEmailAndPassword(email, password)
+          .then(() => navigate('/'))
+          .catch(error => console.error('Error signing in:', error));
+      })
+      .catch(error => console.error('Error setting persistence:', error));
+  };
 
   return (
     <div>
-      <h2>React Google Login</h2>
-      <br />
-      <br />
-      {profile ? (
-        <div>
-          <img src={profile.picture} alt="user image" />
-          <h3>User Logged in</h3>
-          <p>Name: {profile.name}</p>
-          <p>Email Address: {profile.email}</p>
-          <br />
-          <br />
-          <button onClick={logOut}>Log out</button>
-        </div>
-      ) : (
-        <button onClick={() => login()}>Sign in with Google 🚀 </button>
-      )}
+      <h1>Login</h1>
+      <form onSubmit={handleSubmit}>
+        <label>Email:</label>
+        <input type="email" value={email} onChange={handleEmailChange} />
+        <br />
+        <label>Password:</label>
+        <input type="password" value={password} onChange={handlePasswordChange} />
+        <br />
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a href="/signup">Sign up here</a></p>
     </div>
   );
 }
 
 export default Login;
+
+/*
+
+*/
