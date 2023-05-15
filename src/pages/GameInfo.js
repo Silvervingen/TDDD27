@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "../css/GameInfo.css";
+import { db, auth } from "../javascript/firestore";
+
+
 
 import ps5Image from '../pictures/PS5.png'
 import ps4Image from '../pictures/PS4.png'
@@ -58,6 +61,9 @@ function GameInfo() {
   const { id } = useParams();
   const [screenshots, setScreenshots] = useState([]);
 
+  const [games, setGames] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
+  const [savedGames, setSavedGames] = useState([]);
 
   useEffect(() => {
     fetch(`https://api.rawg.io/api/games/${id}?key=${apiKey}`)
@@ -72,6 +78,53 @@ function GameInfo() {
   
   }, [id]);
 
+  useEffect(() => {
+    // get saved games from database for the current user
+    const userId = auth.currentUser.uid;
+    db.collection("savedGames")
+      .where("userId", "==", userId)
+      .get()
+      .then((querySnapshot) => {
+        const savedGames = [];
+        querySnapshot.forEach((doc) => {
+          savedGames.push(doc.data());
+        });
+        setSavedGames(savedGames);
+      })
+      .catch((error) => {
+        console.error("Error getting saved games:", error);
+      });
+  }, []);
+
+  const addToSavedGames = (game) => {
+    const userId = auth.currentUser.uid;
+    const query = db.collection("savedGames").where("userId", "==", userId).where("id", "==", game.id);
+    query.get().then((querySnapshot) => {
+      if (querySnapshot.size === 0) {
+        // game doesn't exist in savedGames collection, so add it
+        db.collection("savedGames")
+          .add({ ...game, userId })
+          .then(() => {
+            console.log("Game added to saved games");
+            setSavedGames([...savedGames, { ...game, userId }]); // update saved games state
+          })
+          .catch((error) => {
+            console.error("Error adding game to saved games:", error);
+          });
+      } else {
+        // game exists in savedGames collection, so remove it
+        querySnapshot.docs[0].ref.delete()
+          .then(() => {
+            console.log("Game removed from saved games");
+            setSavedGames(savedGames.filter(savedGame => savedGame.id !== game.id)); // update saved games state
+          })
+          .catch((error) => {
+            console.error("Error removing game from saved games:", error);
+          });
+      }
+    });
+  };
+
   return (
     <div class="Info-container">
         <div class="gameContainer">
@@ -79,17 +132,21 @@ function GameInfo() {
         <h1 id="gameName">{game.name}</h1>
       <h4>Rating: {game.rating}</h4>
       <h4>Released: {game.released}</h4>
-      
+      {auth.currentUser && (
+          <button onClick={() => addToSavedGames(game)}>
+            {savedGames.some((savedGame) => savedGame.id === game.id)
+              ? "Remove from saved games" // If game alredy exist in list
+              : "Add to saved games"} 
+          </button>
+        )}
       <h2>Description</h2>
       <p>{game.description_raw}</p>
-      
       <h2>Platforms</h2>
       {game.platforms?.map((platform) => (
         <img class='platformLogo' src={platformImages[platform.platform.name]} alt={platform.platform.name} />
-    ))}
-
+    ))} 
+    
     </div>
-   
     <div class="gameContainer2">
     <div className="game-screenshots">
           {screenshots.map(screenshot => (
@@ -98,7 +155,7 @@ function GameInfo() {
         
         </div>
    </div>
-    
+   
 	<button className = "Next" onClick={() => window.history.back()}>Go Back</button>
   
 </div>

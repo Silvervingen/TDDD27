@@ -48,21 +48,22 @@ function Library() {
 
   return (
     <div>
+ <div className="Library-header"> 
+ 
+ <div className="Library-title">
+ <h1>Games</h1>
+ </div>
 
-      <div className="Library-header">
-          <h1>Games</h1>
-        <div id="searchbar2">
-          <input id="searchbar" type="text" placeholder="Search.." value={searchInput} onChange={(e) => setSearchInput(e.target.value)} />
-        </div>
-        <div className="Dropdown-meny">
-          <select name="Filter" id="Filter" value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)}>
-            <option value="rating" selected>Rating</option> {/* Selected är deafult som visas */}
-            <option value="released">Newest</option>
-            <option value="Popular">Popular</option>
-          </select>
-          </div>
-      </div>
-     
+  <div id="searchbar2" style={{ flexGrow: 1 }}>
+    <input id="searchbar" type="text" placeholder="Search.." value={searchInput} onChange={(e) => setSearchInput(e.target.value)} />
+    <select name="Filter" id="Filter" value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)}>
+      <option value="rating" selected>Rating</option>
+      <option value="released">Newest</option>
+      <option value="Popular">Popular</option>
+    </select>
+  </div>
+  
+</div>
       <div className="game-container"> {/* Use a container to hold each game */}
       {filteredGames.map((game) => (
   <Link to={`/GameInfo/${game.id}`} key={game.id} game={game}>

@@ -9,7 +9,10 @@ import "../css/SavedGames.css"; // Import CSS file
 
 const apiKey = '0fbb76c073e64b8a919b4c0f0cf05a0b';
 
+
+
 function SavedGames() {
+
   const [games, setGames] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [savedGames, setSavedGames] = useState([]);
@@ -72,10 +75,10 @@ function SavedGames() {
       }
     });
   };
-  
+
   
   return (
-    <div>
+    <div className="Listpage">
       <div className="Library-header">
         <h1>Lists</h1>
         <div id="searchbar2">
@@ -86,7 +89,7 @@ function SavedGames() {
       {games.length > 0 && searchInput !== "" && (
   <div className="game-container">
     {games.map((game) => (
-      <div className="game-box" key={game.id}>
+      <div className="game-boxes" key={game.id}>
         <img src={game.background_image} alt={game.name} />
         <h2>{game.name}</h2>
         <p>Rating: {game.rating}</p>
@@ -102,16 +105,28 @@ function SavedGames() {
         <h2>Saved Games</h2>
         {savedGames.map((game) => (
           <div className="gameBox" key={game.id}>
+             <Link to={`/GameInfo/${game.id}`} key={game.id} className="Links" game={game}>
             <img src={game.background_image} alt={game.name} />
             <h2>{game.name}</h2>
             <p>Rating: {game.rating}</p>
-            <button onClick={() => {addToSavedGames(game); setSearchInput("")}}>
-              Remove from saved games
+            </Link>
+            <button className="SavedButton" onClick={() => {addToSavedGames(game); setSearchInput("")}}>
+            Remove from saved games
             </button>
           </div>
+          
         ))}
       </div>
     </div>
   );
   
-}export default SavedGames;
+}
+export default SavedGames;
+
+/*<div className="gameBox" key={game.id}>
+            <Link to={`/GameInfo/${game.id}`} key={game.id} game={game}>
+            <div className="linkDiv">
+            <img src={game.background_image} alt={game.name} />
+            <h2>{game.name}</h2>
+            <p>Rating: {game.rating}</p>
+            </div></Link>*/

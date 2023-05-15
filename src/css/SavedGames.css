@@ -1,8 +1,9 @@
   .saved-games-container{
 	width: 50%;
+	padding-left: 3%;
 
-	
   }
+
   .gameBox {
 	display: flex;
 	flex-direction: column;
@@ -15,7 +16,7 @@
 	height: 45%;
   }
   
-  .game-box:hover {
+  .gameBox:hover {
 	transform: translateY(-10px);
 	transform:scale(1.2);
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -29,7 +30,7 @@
   }
   
   .gameBox h2 {
-	margin: 10px 0 0;
+	margin: 10px 0 3px;
 	font-size: 1.2rem;
 	font-weight: bold;
 	color: white;
@@ -40,5 +41,50 @@
 	font-size: 0.9rem;
 	color: #e9e9e9;
   }
+
+  .game-boxes {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border: 1px solid #eeeeee4f;
+	border-radius: 5px;
+	box-shadow: 0 2px 6px rgba(252, 250, 250, 0.1);
+	background-color: #101f2e;
+	width: 100%;
+	height: 100%;
+  }
   
+  .game-boxes:hover {
+	transform: translateY(-10px);
+	transform:scale(1.2);
+	background-color: #1d3955;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
   
+  .game-boxes img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 5px 5px 0 0;
+  }
+  
+  .game-boxes h2 {
+	margin: 10px 0 0 3px;
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: white;
+  }
+  
+  .game-boxes p {
+	margin: 5px 0 0px;
+	font-size: 0.9rem;
+	color: #e9e9e9;
+  }
+
+  .Listpage{
+	background-color: aliceblue;
+  }
+ 
+  .Links:hover{
+	background-color: #101f2e;
+  }

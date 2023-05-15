@@ -1,0 +1,6 @@
+1. Fixa listor
+2. Få bort react router dom från projektet
+3. Bugg fix så när man refresh page in Savedgames so försvinner allt temporärt
+
+skapa flera listor. LÄgg till ID för collection. När listor läggs till får de id från användare och lista så när de ska visas testas användare och collection så om båda stämmer så 
+mapas de ut på sidan

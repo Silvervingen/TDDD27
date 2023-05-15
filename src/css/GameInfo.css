@@ -19,6 +19,10 @@ body {
   height: 50%;
 }
 
+.Info-container{
+  background-color: aliceblue;
+}
+
 #gameName {
   color: black;
 }
