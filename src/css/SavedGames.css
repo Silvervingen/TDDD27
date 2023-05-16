@@ -1,8 +1,9 @@
   .saved-games-container{
-	width: 50%;
+	width: 100%;
+	padding-left: 3%;
 
-	
   }
+  
   .gameBox {
 	display: flex;
 	flex-direction: column;
@@ -11,14 +12,10 @@
 	border-radius: 5px;
 	box-shadow: 0 2px 6px rgba(252, 250, 250, 0.1);
 	background-color: #101f2e;
-	width: 50%;
-	height: 45%;
-  }
-  
-  .game-box:hover {
-	transform: translateY(-10px);
-	transform:scale(1.2);
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	width: 100%;
+	margin: 0 2% 0 2%;
+	padding: 1px;
+	
   }
   
   .gameBox img {
@@ -29,7 +26,7 @@
   }
   
   .gameBox h2 {
-	margin: 10px 0 0;
+	margin: 10px 0 3px;
 	font-size: 1.2rem;
 	font-weight: bold;
 	color: white;
@@ -40,5 +37,125 @@
 	font-size: 0.9rem;
 	color: #e9e9e9;
   }
+
+  .game-boxes {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border: 1px solid #eeeeee4f;
+	border-radius: 5px;
+	box-shadow: 0 2px 6px rgba(252, 250, 250, 0.1);
+	background-color: #101f2e;
+	width: 100%;
+	height: 100%;
+  }
   
+  .game-boxes:hover {
+	transform: translateY(-10px);
+	transform:scale(1.1);
+	background-color: #1d3955;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
   
+  .game-boxes img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 5px 5px 0 0;
+  }
+  
+  .game-boxes h2 {
+	margin: 10px 0 0 3px;
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: white;
+  }
+  
+  .game-boxes p {
+	margin: 5px 0 0px;
+	font-size: 0.9rem;
+	color: #e9e9e9;
+  }
+
+  .Listpage{
+	background-color: aliceblue;
+  }
+ 
+  .Links:hover{
+	background-color: #101f2e;
+  }
+
+.list-buttons{
+	align-items: center;
+	width: 100%;
+	display: inline-block;
+	padding-top: 50px;
+}
+
+.active{
+
+	background-color:#7892c2;
+	border-radius:28px;
+	border:1px solid #4e6096;
+
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 5%;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+	margin-left: 1%;
+	margin-right: 1%;
+
+}
+
+.list{
+	
+	background-color:#f5f5f5;
+	border-radius:28px;
+	border:1px solid #4e6096;
+
+	cursor:pointer;
+	color:#4e6096;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 5%;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+	margin-left: 1%;
+	margin-right: 1%;
+
+}
+
+.sgLibrary-header{
+	background-color: aliceblue;
+	padding-top: 1%;
+	padding-bottom: 2%;
+}
+
+#sgsb2 {
+	display: flex;
+	align-items: center;
+	padding-left: 10%;
+	flex: 1;
+  }
+  
+#sgsb {
+	width: 80%;
+	margin-right: 10px;
+	padding: 5px;
+	border-radius: 5px;
+	border: none;
+	font-size: 16px;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+.list-container{
+	display: grid;
+	grid-template-columns: 23% 23% 23% 23%;
+	grid-gap: 10px;
+	width: 100%;
+	align-items: center;
+
+}
