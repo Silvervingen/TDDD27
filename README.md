@@ -19,7 +19,7 @@ The website will have a user-friendly interface that is easy to navigate. Users 
 In addition to tracking games, users will be able to see detailed information about each game, including a description and price. This information will be retrieved from the RAWG Video Games Database API, which ensures that the information is accurate and up-to-date.
 
 ## Final screencast
-Länk till screencast
+Link to screencast (https://youtu.be/aFB6P0DqzGQ)
 
 ## Functional specification
 ### User Accounts
